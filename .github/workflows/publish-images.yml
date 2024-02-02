@@ -17,8 +17,8 @@ jobs:
 #            os_name: impish
           - os_version: '22.04'
             os_name: jammy
-#          - os_version: '22.10'
-#            os_name: kinetic
+          - os_version: '22.10'
+            os_name: kinetic
           - os_version: '23.04'
             os_name: lunar
           - os_version: '23.10'
