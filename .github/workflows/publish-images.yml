@@ -9,12 +9,12 @@ jobs:
         include:
           - os_version: '20.04'
             os_name: focal
-#          - os_version: '20.10'
-#            os_name: groovy
-#          - os_version: '21.04'
-#            os_name: hirsute
-#          - os_version: '21.10'
-#            os_name: impish
+          - os_version: '20.10'
+            os_name: groovy
+          - os_version: '21.04'
+            os_name: hirsute
+          - os_version: '21.10'
+            os_name: impish
           - os_version: '22.04'
             os_name: jammy
           - os_version: '22.10'
