@@ -1,0 +1,49 @@
+name: Publish images to docker hub
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ubuntu:
+    strategy:
+      matrix:
+        include:
+          - os_version: 20.04
+            os_name: focal
+          - os_version: 20.10
+            os_name: groovy
+          - os_version: 21.04
+            os_name: hirsute
+          - os_version: 21.10
+            os_name: impish
+          - os_version: 22.04
+            os_name: jammy
+          - os_version: 22.10
+            os_name: kinetic
+          - os_version: 23.04
+            os_name: lunar
+          - os_version: 23.10
+            os_name: mantic
+          - os_version: 24.04
+            os_name: noble
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_LOGIN }}
+          password: ${{ secrets.DOCKER_HUB_KEY }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Ubuntu/${{ matrix.os_version }}/Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_HUB_LOGIN }}/act-runner-containers:${{ matrix.os_version }}
+            ${{ secrets.DOCKER_HUB_LOGIN }}/act-runner-containers:${{ matrix.os_name }}
