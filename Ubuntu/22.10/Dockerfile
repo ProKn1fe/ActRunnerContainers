@@ -1,7 +1,7 @@
 FROM ubuntu:kinetic
 
 # Install some stuff
-RUN sudo sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list && \
+RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list && \
 	apt update && \
 	apt upgrade -y && \
 	apt install -y git wget curl gpg build-essential && \
