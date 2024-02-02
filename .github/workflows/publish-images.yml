@@ -41,7 +41,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./Ubuntu/${{ matrix.os_version }}/
           file: ./Ubuntu/${{ matrix.os_version }}/Dockerfile
           push: true
           tags: |
