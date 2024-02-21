@@ -3,7 +3,8 @@ FROM ubuntu:lunar
 # Install some stuff
 RUN apt update && \
 	apt upgrade -y && \
-	apt install -y git wget curl gpg build-essential && \
+	DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y tzdata && \
+	apt install -y git wget curl gpg build-essential golang && \
 	apt autoremove -y && apt clean && \
 	rm -rf /var/lib/apt/lists/*
 

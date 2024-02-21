@@ -4,7 +4,8 @@ FROM ubuntu:impish
 RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list && \
 	apt update && \
 	apt upgrade -y && \
-	apt install -y git wget curl gpg build-essential && \
+	DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y tzdata && \
+	apt install -y git wget curl gpg build-essential golang && \
 	apt autoremove -y && apt clean && \
 	rm -rf /var/lib/apt/lists/*
 
