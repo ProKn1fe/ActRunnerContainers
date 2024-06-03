@@ -3,8 +3,8 @@ FROM ubuntu:lunar
 # Install some stuff
 RUN apt update && \
 	apt upgrade -y && \
-	DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y tzdata && \
-	apt install -y git wget curl gpg build-essential golang && \
+	DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y tzdata \
+	git wget curl gpg build-essential golang && \
 	apt autoremove -y && apt clean && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -13,7 +13,7 @@ RUN apt update && \
 RUN groupadd node \
 	&& useradd --gid node --shell /bin/bash --create-home node
 
-ENV NODE_VERSION 18.19.0
+ENV NODE_VERSION 18.20.3
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 	&& case "${dpkgArch##*-}" in \
