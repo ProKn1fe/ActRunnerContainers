@@ -20,13 +20,13 @@ https://hub.docker.com/r/prokn1fe/act-runner-containers
 Images list LTS:
 | OS | Version | Code name | Tag | Stats |
 |----|---------|-----------|-----|-------|
+| Ubuntu | 24.04 | Noble | act-runner-containers:noble | ![noble](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/noble) |
 | Ubuntu | 22.04 | Jammy | act-runner-containers:jammy | ![jammy](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/jammy) |
 | Ubuntu | 20.04 | Focal | act-runner-containers:focal | ![focal](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/focal) |
 
 All other images:
 | OS | Version | Code name | Tag | Stats |
 |----|---------|-----------|-----|-------|
-| Ubuntu | 24.04 | Noble | act-runner-containers:noble | ![noble](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/noble) |
 | Ubuntu | 23.10 | Mantic | act-runner-containers:mantic | ![mantic](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/mantic) |
 | Ubuntu | 23.04 | Lunar | act-runner-containers:lunar | ![lunar](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/lunar) |
 | Ubuntu | 22.10 | Kinetic | act-runner-containers:kinetic | ![kinetic](https://img.shields.io/docker/image-size/prokn1fe/act-runner-containers/kinetic) |
