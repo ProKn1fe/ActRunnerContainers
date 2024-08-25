@@ -11,7 +11,7 @@ This repository xd.
 
 In config.yaml we can set docker imgaes manually, for example:
 ```
-labels: [ubuntu-latest:docker://act-runner-containers:focal, ubuntu-23.04:docker://act-runner-containers:lunar]
+labels: [ubuntu-latest:docker://act-runner-containers:noble, ubuntu-22.04:docker://act-runner-containers:jammy]
 ```
 You can set system name by code name `lunar` or just by version number `23.04`.
 
